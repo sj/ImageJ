@@ -11,6 +11,9 @@ on:
 
 jobs:
   analyze:
+    env:
+      CODEQL_EXTRACTOR_JAVA_RUN_ANNOTATION_PROCESSORS: true
+  
     name: Analyze
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions:
